@@ -5,7 +5,6 @@ namespace App\Controller\Admin;
 use App\Entity\Game;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
@@ -29,7 +28,7 @@ class GameCrudController extends AbstractCrudController
         return [
             IdField::new('id')->hideOnForm(),
             TextField::new('name'),
-            TextEditorField::new('description')->setSortable(true),
+            TextareaField::new('description')->setSortable(true),
             DateTimeField::new('releaseDate'),
             AssociationField::new('editor')->autocomplete(),
             AssociationField::new('genre')->autocomplete(),
